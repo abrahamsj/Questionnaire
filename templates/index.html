@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Metadata about the document -->
+    <meta charset="UTF-8"> <!-- Specifies the character encoding for the HTML document -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Ensures proper rendering and touch zooming on mobile devices -->
+    
+    <!-- Link to the external CSS file for styling -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    
+    <!-- Title of the document, shown in the browser's title bar or tab -->
+    <title>Questionnaire Form</title>
+</head>
+<h2>Questionnaire </h1>
+    <p>Answer these questions to the with the first thought that comes to mind.</p>
+<body>
+    <!-- Form for collecting questionnaire data -->
+    <!-- The form sends a POST request to the URL for the 'submit' route when submitted -->
+    <form action="{{ url_for('submit') }}" method="post">
+        <!-- Label and input field for the user's name -->
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required><br><br>
+        
+        <!-- Label and input field for the user's email -->
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required><br><br>
+        
+        <!-- Label and input field for the first question -->
+        <label for="question1">Who is your role model?</label>
+        <input type="text" id="question1" name="question1" required><br><br>
+
+               
+        <label for="question2">What was was your dream job when you were younger?</label>
+        <input type="text" id="question2" name="question2" required><br><br>
+
+                
+        <label for="question3">What is your current job?</label>
+        <input type="text" id="question3" name="question3" required><br><br>
+
+
+                
+        <label for="question4">Are you happy?</label>
+        <input type="text" id="question4" name="question4" required><br><br>
+
+           
+        
+        <label for="question5">If today was your lasy day, how would you spend it? </label>
+        <input type="text" id="question5" name="question5" required><br><br>
+
+
+     
+        
+        <!-- Submit button for the form -->
+        <input type="submit" value="Submit">
+    </form>
+
+    <!-- Link to the external JavaScript file for added functionality -->
+    <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+</body>
+</html>
