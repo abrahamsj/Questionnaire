@@ -6,40 +6,55 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #f0f0f0;
-}
-
-form {
-    background: #fff;
+    background-color: rgba(240, 240, 240, 0.45); 
+  }
+  
+  form {
+    background: rgba(255, 255, 255, 0.7); 
     padding: 20px;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-label {
+  }
+  
+  label {
     margin-top: 10px;
     display: block;
-}
-
-input[type="text"],
-input[type="email"] {
+    color: #000; 
+  }
+  
+  input[type="text"],
+  input[type="date"],
+  textarea,
+  select {
     width: 100%;
     padding: 10px;
     margin-top: 5px;
     margin-bottom: 20px;
     border: 1px solid #ccc;
     border-radius: 3px;
-}
-
-input[type="submit"] {
+    box-sizing: border-box;
+    transition: border-color 0.3s;
+  }
+  
+  input[type="text"]:focus,
+  input[type="date"]:focus,
+  textarea:focus,
+  select:focus {
+    border-color: #007BFF; 
+    outline: none;
+  }
+  
+  input[type="submit"] {
     background: #007BFF;
     color: #fff;
     border: none;
     padding: 10px 20px;
     border-radius: 3px;
     cursor: pointer;
-}
-
-input[type="submit"]:hover {
-    background: #0056b3;
-}
+    transition: background 0.3s;
+  }
+  
+  input[type="submit"]:hover {
+    background: #0056b3; 
+  }
+  
