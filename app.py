@@ -4,6 +4,21 @@ from flask import Flask, render_template, request, redirect, url_for
 # Create an instance of the Flask class for web application
 app = Flask(__name__)
 
+#personData object to collect the question answers
+class PersonData:
+    def __init__(self, name, date, question1, question2, question3, question4, question5):
+        self.name = name
+        self.date = date
+        self.question1 = question1
+        self.question2 = question2
+        self.question3 = question3
+        self.question4 = question4
+        self.question5 = question5
+
+        # Create an instance of PersonData with the form data
+        person_data = PersonData(name, date, question1, question2, question3, question4, question5)
+        
+
 # Define the route for the home page
 @app.route('/')
 def index():
@@ -26,12 +41,13 @@ def submit():
         question5 = request.form['question5']
         
         # Process the extracted data 
-        print(f'Name: {name}, Date: {date}')
-        print(f'Question 1: {question1}')
-        print(f'Question 2: {question2}')
-        print(f'Question 3: {question3}')
-        print(f'Question 4: {question4}')
-        print(f'Question 5: {question5}')
+        print(f"Name: {person_data.name}")
+        print(f"Date: {person_data.date}")
+        print(f"Question 1: {person_data.question1}")
+        print(f"Question 2: {person_data.question2}")
+        print(f"Question 3: {person_data.question3}")
+        print(f"Question 4: {person_data.question4}")
+        print(f"Question 5: {person_data.question5}")
         
         # Redirect the user back to the home page after processing the form data
         return redirect(url_for('index'))
