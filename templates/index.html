@@ -6,70 +6,76 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Ensures proper rendering and touch zooming on mobile devices -->
     
     <!-- Link to the external CSS file for styling -->
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
     <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='favicon.ico') }}">
     
     <!-- Title of the document, shown in the browser's title bar or tab -->
     <title>Questionnaire Form</title>
 </head>
-<h2>Questionnaire </h2>
-    <p>Answer these questions to the with the first thought that comes to mind.</p>
 <body>
-    <!-- Form for collecting questionnaire data -->
-    <!-- The form sends a POST request to the URL for the 'submit' route when submitted -->
-    <form action="{{ url_for('submit') }}" method="post">
-        <!-- Label and input field for the user's name -->
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" required><br><br>
+    <!-- Main container for the form content -->
+    <div class="container">
+        <!-- Heading of the form -->
+        <h2>Questionnaire</h2>
         
-        <!-- Label and input field for the user's date -->
-        <label for="email">Date:</label>
-        <input type="date" id="email" name="date" required><br><br>
-
-        <h3>Question 1</h3>
-        <!-- Label and input field for the first question -->
-        <label for="question1">Alex is Charlie's father.
-            Who of them was born later?</label>
-        <select id="question1" name="question1" required><br><br>
-            <option value="Alex">Alex</option>
-            <option value="Charlie">Charlie</option>
-        </select><br><br>
-
-        <h3>Question 2</h3>      
-        <label for="question2">I make two people out of one.
-            What am I?</label>
-        <input type="text" id="question2" name="question2" required><br><br>
-
-        <h3>Question 3</h3>        
-        <label for="question3">What loses its head in the morning and gets it back at night?</label>
-        <input type="text" id="question3" name="question3" required><br><br>
-
-
-        <h3>Question 4</h3>       
-        <label for="question4">The day before two days after the day before tomorrow is Saturday. What day is it today?</label><br>
-        <input type="radio" id="option-a" name="question4" value="A">
-        <label for="option-a">Monday</label><br>
-        <input type="radio" id="option-b" name="question4" value="B">
-        <label for="option-b">Friday</label><br>
-        <input type="radio" id="option-c" name="question4" value="C">
-        <label for="option-c">Thursday</label><br>
-        <input type="radio" id="option-d" name="question4" value="D">
-        <label for="option-d">Wednesday</label><br><br>
-       
+        <!-- Brief instruction for the form -->
+        <p>Answer these questions with the first thought that comes to mind.</p>
         
-        <h3>Question 5</h3>
-        <label for="question5">You’re at a fork in the road in which one direction leads to the City of Lies (where everyone always lies) and the other to the City of Truth (where everyone always tells the truth). <br>There’s a person at the fork who lives in one of the cities, but you’re not sure which one. <br>
-            What question could you ask the person to find out which road leads to the City of Truth? </label>
-        <input type="text" id="question5" name="question5" required><br><br>
+        <!-- Form element with POST method to submit data to the server -->
+        <form action="{{ url_for('submit') }}" method="post">
+            
+            <!-- Section for user details -->
+            <section>
+                <!-- Label and input field for the user's name -->
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required><br><br>
+                
+                <!-- Label and input field for the user's date -->
+                <label for="date">Date:</label>
+                <input type="date" id="date" name="date" required><br><br>
+            </section>
+            
+            <!-- Question 1 -->
+            <h3>Question 1</h3>
+            <label for="question1">Alex is Charlie's father. Who of them was born later?</label>
+            <select id="question1" name="question1" required>
+                <option value="Alex">Alex</option>
+                <option value="Charlie">Charlie</option>
+            </select><br><br>
 
+            <!-- Question 2 -->
+            <h3>Question 2</h3>
+            <label for="question2">I make two people out of one. What am I?</label>
+            <input type="text" id="question2" name="question2" required><br><br>
 
-     
-        
-        <!-- Submit button for the form -->
-        <input type="submit" value="Submit">
-    </form>
+            <!-- Question 3 -->
+            <h3>Question 3</h3>
+            <label for="question3">What loses its head in the morning and gets it back at night?</label>
+            <input type="text" id="question3" name="question3" required><br><br>
+
+            <!-- Question 4 -->
+            <h3>Question 4</h3>
+            <label for="question4">The day before two days after the day before tomorrow is Saturday. What day is it today?</label><br>
+            <input type="radio" id="option-a" name="question4" value="A">
+            <label for="option-a">Monday</label><br>
+            <input type="radio" id="option-b" name="question4" value="B">
+            <label for="option-b">Friday</label><br>
+            <input type="radio" id="option-c" name="question4" value="C">
+            <label for="option-c">Thursday</label><br>
+            <input type="radio" id="option-d" name="question4" value="D">
+            <label for="option-d">Wednesday</label><br><br>
+
+            <!-- Question 5 -->
+            <h3>Question 5</h3>
+            <label for="question5"> You are at a fork in the road. One path leads to the City of Lies, where everyone always lies, and the other leads to the City of Truth, where everyone always tells the truth. There is a person standing at the fork who lives in one of these cities, but you don't know which one. What question can you ask the person to find out which road leads to the City of Truth?</label>
+            <input type="text" id="question5" name="question5" required><br><br>
+
+            <!-- Submit button for the form -->
+            <input type="submit" value="Submit">
+        </form>
+    </div>
 
     <!-- Link to the external JavaScript file for added functionality -->
-    <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+    <script src="{{ url_for('static', filename='scripts.js') }}"></script>
 </body>
 </html>

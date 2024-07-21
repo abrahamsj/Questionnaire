@@ -17,12 +17,21 @@ def submit():
     if request.method == 'POST':
         # Extract data from the form using the request.form dictionary
         name = request.form['name']  # Get the value of the 'name' field
-        email = request.form['email']  # Get the value of the 'email' field
-        question1 = request.form['question1']  # Get the value of the 'question1' field more questions pending working on the setup now
+        date = request.form['date']  # Get the value of the 'email' field
+        # Get the value of the question field 
+        question1 = request.form['question1']  
+        question2 = request.form['question2']
+        question3 = request.form['question3']
+        question4 = request.form['question4']
+        question5 = request.form['question5']
         
-        
-        # Process the extracted data (e.g., print to console, save to a database, etc.)
-        print(f'Name: {name}, Email: {email}, Question1: {question1}')
+        # Process the extracted data 
+        print(f'Name: {name}, Date: {date}')
+        print(f'Question 1: {question1}')
+        print(f'Question 2: {question2}')
+        print(f'Question 3: {question3}')
+        print(f'Question 4: {question4}')
+        print(f'Question 5: {question5}')
         
         # Redirect the user back to the home page after processing the form data
         return redirect(url_for('index'))
