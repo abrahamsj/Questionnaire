@@ -5,9 +5,9 @@ document.addEventListener('DOMContentLoaded', () => {
     
     form.addEventListener('submit', (event) => {
         const name = document.getElementById('name').value;
-        const email = document.getElementById('email').value;
+        const date = document.getElementById('date').value;
         
-        if (!name || !email) {
+        if (!name || !date) {
             alert('Please fill in all required fields.');
             event.preventDefault();
         }
